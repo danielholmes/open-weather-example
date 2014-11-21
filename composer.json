@@ -1,0 +1,24 @@
+{
+    "name": "danielholmes/open-weather-example",
+    "version": "0.0.1",
+    "type": "project",
+    "description": "Example app using the Open Weather Map API",
+    "authors": [
+        {
+            "name": "Daniel Holmes",
+            "email": "daniel@danielholmes.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "OpenWeatherExample\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "monolog/monolog": "1.11.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.3.5"
+    }
+}
