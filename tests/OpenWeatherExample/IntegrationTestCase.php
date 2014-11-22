@@ -1,8 +1,11 @@
 <?php
 
-namespace OpenWeatherTestExample\IntegrationTests;
+namespace OpenWeatherExample;
 
-class HelloWorldTest extends \PHPUnit_Framework_TestCase
+use Guzzle\Http\Client;
+use Guzzle\Http\ClientInterface;
+
+class IntegrationTestCase extends \PHPUnit_Framework_TestCase
 {
     const TEST_HOST = '127.0.0.1';
     const TEST_PORT = 8765;
@@ -14,7 +17,7 @@ class HelloWorldTest extends \PHPUnit_Framework_TestCase
             'php -S %s:%d -t %s >/dev/null 2>&1 & echo $!',
             self::TEST_HOST,
             self::TEST_PORT,
-            realpath(__DIR__ . '/../../../web')
+            realpath(__DIR__ . '/../../web')
         );
 
         $output = array();
@@ -53,9 +56,11 @@ class HelloWorldTest extends \PHPUnit_Framework_TestCase
         return true;
     }
 
-    public function testHelloWorld()
+    /**
+     * @return ClientInterface
+     */
+    protected function createTestClient()
     {
-        $res = @file_get_contents('http://127.0.0.1:8765');
-        $this->assertEquals('Hello World', $res);
+        return new Client(sprintf('http://%s:%d', self::TEST_HOST, self::TEST_PORT));
     }
 }

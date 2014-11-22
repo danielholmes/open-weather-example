@@ -25,4 +25,4 @@ a city and country code and will provide back (in metric units):
 ## Running the tests
  NOTE: Test have only been run on *nix based machines. The integration tests will not run on a Windows system
  1. Perform the steps outlined in Setting up a Development Environment
- 2. `php vendor/bin/phpunit`
+ 2. `vendor/bin/phpunit`
