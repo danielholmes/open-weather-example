@@ -14,7 +14,7 @@ class IntegrationTest extends IntegrationTestCase
 
     public function testValidSubmission()
     {
-        $response = $this->createTestClient()->get('/?location=Sydney%20AU')->send();
+        $response = $this->createTestClient()->get('/?location=Sydney+AU')->send();
 
         $this->assertSame(200, $response->getStatusCode());
         $this->assertNotContains('Enter a location', $response->getBody(true));
@@ -24,7 +24,7 @@ class IntegrationTest extends IntegrationTestCase
     public function testInvalidSubmission()
     {
         $response = $this->createTestClient()->get(
-            '/?location=Sydney%20ZZ',
+            '/?location=Sydney+ZZ',
             null,
             ['exceptions' => false]
         )->send();

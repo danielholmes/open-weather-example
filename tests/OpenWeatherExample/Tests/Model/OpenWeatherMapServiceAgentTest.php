@@ -121,7 +121,8 @@ class OpenWeatherMapServiceAgentTest extends \PHPUnit_Framework_TestCase
         return [
             [new Response(400, ['Content-Type' => 'application/json'], '"Invalid input"')],
             [new Response(200, ['Content-Type' => 'text/html'], '<p>Some html returned for some reason</p>')],
-            [new Response(200, ['Content-Type' => 'application/json'], '<p>Html even though says its json</p>')]
+            [new Response(200, ['Content-Type' => 'application/json'], '<p>Html even though says its json</p>')],
+            [new Response(500, ['Content-Type' => 'application/json'], 'Internal server error')]
         ];
     }
 

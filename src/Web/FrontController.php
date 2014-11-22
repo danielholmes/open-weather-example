@@ -4,6 +4,7 @@ namespace OpenWeatherExample\Web;
 
 use Guzzle\Plugin\Backoff\BackoffPlugin;
 use Guzzle\Service\Client;
+use OpenWeatherExample\Model\OpenWeatherMapAgentException;
 use OpenWeatherExample\Model\OpenWeatherMapAgentInvalidCityException;
 use OpenWeatherExample\Model\OpenWeatherMapServiceAgent;
 
@@ -42,6 +43,10 @@ class FrontController
                 'forecast' => $agent->getThreeDaysForecast($location)
             ]);
         }
+        catch (OpenWeatherMapAgentException $e)
+        {
+            $this->serviceUnavailableResponse($location);
+        }
         catch (OpenWeatherMapAgentInvalidCityException $e)
         {
             $this->invalidLocationResponse($location);
@@ -64,6 +69,15 @@ class FrontController
     {
         http_response_code(400);
         $this->runEnter($location, sprintf('The location you entered "%s" could not be found', $location));
+    }
+
+    /**
+     * @param string $location
+     */
+    private function serviceUnavailableResponse($location)
+    {
+        http_response_code(503);
+        $this->runEnter($location, 'The service it temporarily unavailable, please try again soon');
     }
 
     /**
