@@ -15,8 +15,8 @@ a city and country code and will provide back (in metric units):
 
 ## Running a Development Version
  1. Perform the steps outlined in Setting up a Development Environment
- 2. `php -S localhost:8765 -t web/`
- 3. You can now access the site from (http://localhost:8765)
+ 2. `php -S 127.0.0.1:8765 -t web/`
+ 3. You can now access the site from [http://127.0.0.1:8765](http://127.0.0.1:8765)
 
 
 ## Running the tests
