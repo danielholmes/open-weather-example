@@ -21,6 +21,6 @@
     },
     "require-dev": {
         "phpunit/phpunit": "4.3.5",
-        "fabpot/goutte" :"2.0.2"
+        "guzzle/plugin-mock": "3.9.2"
     }
 }

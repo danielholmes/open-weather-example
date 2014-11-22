@@ -1,0 +1,48 @@
+{
+    "coord": {
+        "lon": -60.18,
+        "lat": 46.14
+    },
+    "sys": {
+        "type": 1,
+        "id": 3506,
+        "message": 0.0669,
+        "country": "CA",
+        "sunrise": 1416654717,
+        "sunset": 1416687724
+    },
+    "weather": [
+        {
+            "id": 802,
+            "main": "Clouds",
+            "description": "scattered clouds",
+            "icon": "03n"
+        },
+        {
+            "id": 741,
+            "main": "Fog",
+            "description": "fog",
+            "icon": "50n"
+        }
+    ],
+    "base": "cmc stations",
+    "main": {
+        "temp": -4.78,
+        "pressure": 1008,
+        "humidity": 85,
+        "temp_min": -7,
+        "temp_max": -3
+    },
+    "wind": {
+        "speed": 5.7,
+        "deg": 290,
+        "gust": 9.3
+    },
+    "clouds": {
+        "all": 40
+    },
+    "dt": 1416625200,
+    "id": 6354908,
+    "name": "Sydney",
+    "cod": "200"
+}

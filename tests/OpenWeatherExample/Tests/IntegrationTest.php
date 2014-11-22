@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenWeatherExample;
+namespace OpenWeatherExample\Tests;
 
 class IntegrationTest extends IntegrationTestCase
 {

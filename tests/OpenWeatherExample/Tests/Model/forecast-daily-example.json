@@ -1,0 +1,91 @@
+{
+    "cod": "200",
+    "message": 0.5394,
+    "city": {
+        "id": "2147714",
+        "name": "Sydney",
+        "coord": {
+            "lon": 151.207,
+            "lat": -33.8696
+        },
+        "country": "Australia",
+        "population": 0
+    },
+    "cnt": 3,
+    "list": [
+        {
+            "dt": 1416618000,
+            "temp": {
+                "day": 25,
+                "min": 21.65,
+                "max": 26.7,
+                "night": 21.65,
+                "eve": 26,
+                "morn": 25
+            },
+            "pressure": 1023.42,
+            "humidity": 71,
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "sky is clear",
+                    "icon": "01d"
+                }
+            ],
+            "speed": 1.66,
+            "deg": 104,
+            "clouds": 0
+        },
+        {
+            "dt": 1416704400,
+            "temp": {
+                "day": 29.25,
+                "min": 20.52,
+                "max": 34.01,
+                "night": 20.66,
+                "eve": 27.51,
+                "morn": 20.52
+            },
+            "pressure": 1018.95,
+            "humidity": 64,
+            "weather": [
+                {
+                    "id": 500,
+                    "main": "Rain",
+                    "description": "light rain",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 1.77,
+            "deg": 347,
+            "clouds": 48,
+            "rain": 3
+        },
+        {
+            "dt": 1416790800,
+            "temp": {
+                "day": 28.13,
+                "min": 22.14,
+                "max": 30.3,
+                "night": 22.58,
+                "eve": 30.3,
+                "morn": 22.14
+            },
+            "pressure": 1011.89,
+            "humidity": 0,
+            "weather": [
+                {
+                    "id": 501,
+                    "main": "Rain",
+                    "description": "moderate rain",
+                    "icon": "10d"
+                }
+            ],
+            "speed": 2.25,
+            "deg": 324,
+            "clouds": 17,
+            "rain": 11.43
+        }
+    ]
+}

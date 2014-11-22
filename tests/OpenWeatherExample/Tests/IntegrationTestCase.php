@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenWeatherExample;
+namespace OpenWeatherExample\Tests;
 
 use Guzzle\Http\Client;
 use Guzzle\Http\ClientInterface;
@@ -17,7 +17,7 @@ class IntegrationTestCase extends \PHPUnit_Framework_TestCase
             'php -S %s:%d -t %s >/dev/null 2>&1 & echo $!',
             self::TEST_HOST,
             self::TEST_PORT,
-            realpath(__DIR__ . '/../../web')
+            realpath(__DIR__ . '/../../../web')
         );
 
         $output = array();
