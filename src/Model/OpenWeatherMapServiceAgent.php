@@ -132,7 +132,7 @@ class OpenWeatherMapServiceAgent
         if ((string) $body->cod !== '200')
         {
             throw new OpenWeatherMapAgentInvalidCityException(sprintf(
-                'City: %s',
+                'City could not be found: %s',
                 $response->getBody(true)
             ));
         }
