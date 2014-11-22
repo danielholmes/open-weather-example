@@ -55,7 +55,7 @@ class OpenWeatherMapServiceAgentTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider invalidResponsesDataProvider
-     * @expectedException OpenWeatherExample\Model\OpenWeatherMapAgentException
+     * @expectedException \OpenWeatherExample\Model\OpenWeatherMapAgentException
      * @param Response $response
      */
     public function testHandlesInvalidWeatherResponseCorrectly(Response $response)
@@ -67,7 +67,7 @@ class OpenWeatherMapServiceAgentTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider invalidResponsesDataProvider
-     * @expectedException OpenWeatherExample\Model\OpenWeatherMapAgentException
+     * @expectedException \OpenWeatherExample\Model\OpenWeatherMapAgentException
      * @param Response $response
      */
     public function testHandlesInvalidForecastResponseCorrectly(Response $response)
@@ -106,7 +106,7 @@ class OpenWeatherMapServiceAgentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException OpenWeatherExample\Model\OpenWeatherMapAgentInvalidCityException
+     * @expectedException \OpenWeatherExample\Model\OpenWeatherMapAgentInvalidCityException
      */
     public function testLiveGetCurrentWithInvalidCityCall()
     {
@@ -143,6 +143,7 @@ class OpenWeatherMapServiceAgentTest extends \PHPUnit_Framework_TestCase
     {
         $plugin = new MockPlugin();
         $plugin->addResponse($response);
+
         $client = new Client();
         $client->addSubscriber($plugin);
 

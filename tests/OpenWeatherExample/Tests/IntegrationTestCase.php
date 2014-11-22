@@ -8,10 +8,10 @@ use Guzzle\Http\ClientInterface;
 class IntegrationTestCase extends \PHPUnit_Framework_TestCase
 {
     const TEST_HOST = '127.0.0.1';
-    const TEST_PORT = 8765;
+    const TEST_PORT = 8901;
     const TEST_TIMEOUT_SECS = 2;
 
-    public function setUp()
+    public static function setUpBeforeClass()
     {
         $command = sprintf(
             'php -S %s:%d -t %s >/dev/null 2>&1 & echo $!',
@@ -32,7 +32,7 @@ class IntegrationTestCase extends \PHPUnit_Framework_TestCase
         $start = microtime(true);
         while ((microtime(true) - $start) <= self::TEST_TIMEOUT_SECS)
         {
-            if ($this->canConnectToTestWebServer())
+            if (self::canConnectToTestWebServer())
             {
                 return;
             }
@@ -44,15 +44,15 @@ class IntegrationTestCase extends \PHPUnit_Framework_TestCase
     /**
      * @return bool
      */
-    private function canConnectToTestWebServer()
+    private static function canConnectToTestWebServer()
     {
-        $sp = @fsockopen(self::TEST_HOST, self::TEST_PORT);
-        if ($sp === false)
+        $socket = @fsockopen(self::TEST_HOST, self::TEST_PORT);
+        if ($socket === false)
         {
             return false;
         }
 
-        fclose($sp);
+        fclose($socket);
         return true;
     }
 

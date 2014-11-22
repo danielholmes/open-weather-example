@@ -18,6 +18,7 @@ class IntegrationTest extends IntegrationTestCase
 
         $this->assertSame(200, $response->getStatusCode());
         $this->assertNotContains('Enter a location', $response->getBody(true));
+        $this->assertContains('Sydney, Australia', $response->getBody(true));
     }
 
     public function testInvalidSubmission()

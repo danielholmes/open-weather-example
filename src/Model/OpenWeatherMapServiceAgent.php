@@ -54,6 +54,14 @@ class OpenWeatherMapServiceAgent
                 'cnt' => 3
             ]
         );
+        $timeSortedRawDayForecasts = $body->list;
+        usort(
+            $timeSortedRawDayForecasts,
+            function (\stdClass $rawDay1, \stdClass $rawDay2)
+            {
+                return $rawDay1->dt - $rawDay2->dt;
+            }
+        );
 
         return new CityForecast(
             $body->city->name,
@@ -63,7 +71,7 @@ class OpenWeatherMapServiceAgent
                 {
                     return $this->parseDayForecast($rawDayForecast);
                 },
-                $body->list
+                $timeSortedRawDayForecasts
             )
         );
     }
